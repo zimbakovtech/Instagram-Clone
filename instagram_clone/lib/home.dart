@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'direct.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -6,6 +7,9 @@ void main() => runApp(MaterialApp(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomePage(),
+      routes: {
+        '/direct': (context) => Direct(),
+      },
     ));
 
 class HomePage extends StatefulWidget {
@@ -16,6 +20,39 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        title: Text(
+          'Instagram',
+          style: TextStyle(
+            fontFamily: 'VeganStyle',
+            color: Colors.black,
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.add_box_outlined,
+              color: Colors.black,
+            ),
+            onPressed: () {},
+          ),
+          SizedBox(
+            width: 5.0,
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.near_me_outlined,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.of(context).pushNamed('/direct');
+            },
+          ),
+        ],
+      ),
+    );
   }
 }

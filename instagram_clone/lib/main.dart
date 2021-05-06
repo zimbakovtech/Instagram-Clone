@@ -22,10 +22,10 @@ class TabPage extends StatelessWidget {
         body: TabBarView(
           children: [
             HomePage(),
-            Container(color: Colors.blue),
-            Container(color: Colors.green),
-            Container(color: Colors.black),
-            Container(color: Colors.yellow),
+            Explore(),
+            AddPage(),
+            Activity(),
+            ProfilePage(),
           ],
         ),
         bottomNavigationBar: TabBar(
