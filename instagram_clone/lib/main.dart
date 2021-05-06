@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
+import 'explore.dart';
+import 'add.dart';
+import 'activity.dart';
+import 'profile.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -16,7 +21,7 @@ class TabPage extends StatelessWidget {
       child: Scaffold(
         body: TabBarView(
           children: [
-            Container(color: Colors.red),
+            HomePage(),
             Container(color: Colors.blue),
             Container(color: Colors.green),
             Container(color: Colors.black),
