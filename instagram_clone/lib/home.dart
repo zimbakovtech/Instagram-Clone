@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'direct.dart';
+import 'story.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -18,6 +20,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Story> profiles = [
+    Story(username: 'Your Story', profile: 'dm.jpg', isPressed: false),
+    Story(username: 'zendaya', profile: 'zendaya.jpg', isPressed: false),
+    Story(username: 'kyrieirving', profile: 'kyrie.jpg', isPressed: false),
+    Story(username: 'travisscott', profile: 'travis.jpg', isPressed: false),
+    Story(username: 'therock', profile: 'therock.jpeg', isPressed: false),
+    Story(username: 'kyliejenner', profile: 'kylie.jpg', isPressed: false),
+    Story(username: 'zendaya', profile: 'zendaya.jpg', isPressed: false),
+    Story(username: 'kyrieirving', profile: 'kyrie.jpg', isPressed: false),
+    Story(username: 'travisscott', profile: 'travis.jpg', isPressed: false),
+    Story(username: 'therock', profile: 'therock.jpeg', isPressed: false),
+    Story(username: 'kyliejenner', profile: 'kylie.jpg', isPressed: false),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +64,81 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.black,
               ),
               onPressed: () => Navigator.of(context).pushNamed('/direct')),
+        ],
+      ),
+      body: Column(
+        children: [
+          Container(
+            height: 100.0,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: profiles.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Stack(
+                          children: [
+                            Container(
+                              height: 75.0,
+                              width: 75.0,
+                              decoration: BoxDecoration(
+                                color: (profiles[index].isPressed)
+                                    ? Colors.grey
+                                    : Colors.red,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 2.0, left: 2.4),
+                              child: Container(
+                                height: 70.0,
+                                width: 70.0,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 6.0, left: 6.0),
+                              child: Container(
+                                child: GestureDetector(onTap: () {
+                                  setState(() {
+                                    profiles[index].isPressed = true;
+                                  });
+                                }),
+                                height: 63.0,
+                                width: 63.0,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: ExactAssetImage(
+                                        profiles[index].profile),
+                                    fit: BoxFit.fill,
+                                  ),
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 4.0),
+                      Text(
+                        '${profiles[index].username}',
+                        style: TextStyle(fontSize: 12.0, color: Colors.black),
+                      ),
+                    ],
+                  );
+                }),
+          ),
+          Divider(
+            height: 1.0,
+            color: Colors.grey[350],
+          ),
         ],
       ),
     );
