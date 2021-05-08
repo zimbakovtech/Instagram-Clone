@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
@@ -43,14 +44,11 @@ class _HomePageState extends State<HomePage> {
             width: 5.0,
           ),
           IconButton(
-            icon: Icon(
-              Icons.near_me_outlined,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.of(context).pushNamed('/direct');
-            },
-          ),
+              icon: Icon(
+                Icons.near_me_outlined,
+                color: Colors.black,
+              ),
+              onPressed: () => Navigator.of(context).pushNamed('/direct')),
         ],
       ),
     );
