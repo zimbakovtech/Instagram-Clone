@@ -3,5 +3,9 @@ class Story {
   String profile;
   bool isPressed;
 
-  Story({this.username, this.profile, this.isPressed});
+  Story({
+    this.username,
+    this.profile,
+    this.isPressed,
+  });
 }

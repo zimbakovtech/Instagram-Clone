@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'direct.dart';
-import 'story.dart';
+import 'lists.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -20,19 +20,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Story> profiles = [
-    Story(username: 'Your Story', profile: 'dm.jpg', isPressed: false),
-    Story(username: 'zendaya', profile: 'zendaya.jpg', isPressed: false),
-    Story(username: 'kyrieirving', profile: 'kyrie.jpg', isPressed: false),
-    Story(username: 'travisscott', profile: 'travis.jpg', isPressed: false),
-    Story(username: 'therock', profile: 'therock.jpeg', isPressed: false),
-    Story(username: 'kyliejenner', profile: 'kylie.jpg', isPressed: false),
-    Story(username: 'zendaya', profile: 'zendaya.jpg', isPressed: false),
-    Story(username: 'kyrieirving', profile: 'kyrie.jpg', isPressed: false),
-    Story(username: 'travisscott', profile: 'travis.jpg', isPressed: false),
-    Story(username: 'therock', profile: 'therock.jpeg', isPressed: false),
-    Story(username: 'kyliejenner', profile: 'kylie.jpg', isPressed: false),
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,6 +125,28 @@ class _HomePageState extends State<HomePage> {
           Divider(
             height: 1.0,
             color: Colors.grey[350],
+          ),
+          Container(
+            height: 500.0,
+            width: 500.0,
+            child: ListView.builder(
+              itemCount: posts.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Column(
+                  children: [
+                    Container(
+                      height: 450.0,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(posts[index].post),
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ],
       ),
