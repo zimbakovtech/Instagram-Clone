@@ -63,6 +63,7 @@ class _TabPageState extends State<TabPage> with SingleTickerProviderStateMixin {
         ],
       ),
       bottomNavigationBar: TabBar(
+        indicatorColor: Colors.white,
         controller: _tabController,
         physics: NeverScrollableScrollPhysics(),
         tabs: <Widget>[

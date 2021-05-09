@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/direct/chats.dart';
+import 'direct/chats.dart';
+import 'direct/rooms.dart';
+import 'direct/requests.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -13,7 +17,27 @@ class Direct extends StatefulWidget {
   _DirectState createState() => _DirectState();
 }
 
-class _DirectState extends State<Direct> {
+class _DirectState extends State<Direct> with SingleTickerProviderStateMixin {
+  TabController _tabController;
+  int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+    _tabController.addListener(() {
+      setState(() {
+        _currentIndex = _tabController.index;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +69,45 @@ class _DirectState extends State<Direct> {
             icon: Icon(Icons.note_add_outlined, color: Colors.black),
             onPressed: () {},
           ),
+        ],
+        bottom: TabBar(
+          indicatorColor: Colors.black,
+          controller: _tabController,
+          tabs: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Text(
+                'Chats',
+                style: TextStyle(
+                  color: (_currentIndex == 0) ? Colors.black : Colors.grey,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Text(
+                'Rooms',
+                style: TextStyle(
+                  color: (_currentIndex == 1) ? Colors.black : Colors.grey,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Text(
+                'Requests',
+                style: TextStyle(color: Colors.blue),
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          Chats(),
+          Rooms(),
+          Requests(),
         ],
       ),
     );
