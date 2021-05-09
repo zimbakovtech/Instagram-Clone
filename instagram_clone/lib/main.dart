@@ -5,9 +5,6 @@ import 'explore.dart';
 import 'add.dart';
 import 'activity.dart';
 import 'profile.dart';
-import 'direct/chats.dart';
-import 'direct/rooms.dart';
-import 'direct/requests.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -17,9 +14,6 @@ void main() => runApp(MaterialApp(
       home: TabPage(),
       routes: {
         '/direct': (context) => Direct(),
-        '/chats': (context) => Chats(),
-        '/rooms': (context) => Rooms(),
-        '/requests': (context) => Requests(),
       },
     ));
 

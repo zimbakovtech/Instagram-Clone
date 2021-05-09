@@ -23,3 +23,23 @@ class Feed {
     this.posted,
   });
 }
+
+class Story {
+  String username;
+  String profile;
+  bool isPressed;
+
+  Story({
+    this.username,
+    this.profile,
+    this.isPressed,
+  });
+}
+
+class Dms {
+  String name;
+  String profile;
+  String status;
+
+  Dms({this.name, this.profile, this.status});
+}

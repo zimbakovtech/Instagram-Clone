@@ -1,5 +1,4 @@
-import 'story.dart';
-import 'feed.dart';
+import 'classes.dart';
 
 List<Story> profiles = [
   Story(username: 'Your Story', profile: 'dm.jpg', isPressed: false),
@@ -136,4 +135,17 @@ List<Feed> posts = [
       comments: 213,
       likes: 26000,
       posted: 73),
+];
+
+List<Dms> directs = [
+  Dms(name: 'Zendaya', profile: 'zendaya.jpg', status: 'Sent 1m ago'),
+  Dms(name: 'Travis Scott', profile: 'travis.jpg', status: 'Seen 8m ago'),
+  Dms(name: 'The Rock', profile: 'therock.jpeg', status: 'Sent 20m ago'),
+  Dms(name: 'Kyrie Irving', profile: 'kyrie.jpg', status: 'Sent 1h ago'),
+  Dms(name: 'Kylie Jenner', profile: 'kylie.jpg', status: 'Sent 3h ago'),
+  Dms(name: 'Zendaya', profile: 'zendaya.jpg', status: 'Opened 5h ago'),
+  Dms(name: 'Travis Scott', profile: 'travis.jpg', status: 'Sent 10h ago'),
+  Dms(name: 'The Rock', profile: 'therock.jpeg', status: 'Seen 19h ago'),
+  Dms(name: 'Kyrie Irving', profile: 'kyrie.jpg', status: 'Opened 1d ago'),
+  Dms(name: 'Kylie Jenner', profile: 'kylie.jpg', status: 'Sent 3d ago'),
 ];
