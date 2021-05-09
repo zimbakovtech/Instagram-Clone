@@ -15,6 +15,8 @@ void main() => runApp(MaterialApp(
     ));
 
 class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -127,20 +129,153 @@ class _HomePageState extends State<HomePage> {
             color: Colors.grey[350],
           ),
           Container(
-            height: 500.0,
-            width: 500.0,
+            height: MediaQuery.of(context).size.height - 203,
+            width: 500,
             child: ListView.builder(
               itemCount: posts.length,
               itemBuilder: (BuildContext context, int index) {
                 return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            height: 30.0,
+                            width: 30.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(posts[index].profile),
+                                  fit: BoxFit.fill),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          posts[index].username,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Spacer(),
+                        IconButton(
+                          icon: Icon(Icons.more_vert),
+                          color: Colors.black,
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
                     Container(
-                      height: 450.0,
+                      height: 500.0,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(posts[index].post),
-                          fit: BoxFit.fitWidth,
+                          fit: BoxFit.cover,
                         ),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: posts[index].isLiked
+                              ? Icon(Icons.favorite)
+                              : Icon(Icons.favorite_outline),
+                          color: posts[index].isLiked ? Colors.red : null,
+                          onPressed: () {
+                            setState(() {
+                              posts[index].isLiked = !posts[index].isLiked;
+                            });
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.message_outlined),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.near_me_outlined),
+                          onPressed: () {},
+                        ),
+                        Spacer(),
+                        IconButton(
+                          icon: posts[index].isSaved
+                              ? Icon(Icons.bookmark)
+                              : Icon(Icons.bookmark_outline),
+                          onPressed: () {
+                            setState(() {
+                              posts[index].isSaved = !posts[index].isSaved;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Text(
+                        (posts[index].likes < 10000)
+                            ? '${posts[index].likes} likes'
+                            : (posts[index].likes < 100000)
+                                ? '${posts[index].likes ~/ 1000},${(posts[index].likes / 100 % 10).toInt()}${(posts[index].likes / 10 % 10).toInt()}${(posts[index].likes % 10).toInt()} likes'
+                                : '${posts[index].likes} likes',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13.0,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0, top: 5.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            '${posts[index].username} ',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13.0,
+                            ),
+                          ),
+                          Text(
+                            '${posts[index].caption}',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 13.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0, top: 5.0),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 25.0,
+                            width: 25.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('dm.jpg'),
+                                  fit: BoxFit.fill),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: TextButton(
+                              child: Text(
+                                'Add a comment...',
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 13.0,
+                                ),
+                              ),
+                              onPressed: () {},
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
