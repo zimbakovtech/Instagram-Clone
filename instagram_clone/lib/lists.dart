@@ -84,7 +84,7 @@ List<Feed> posts = [
       isSaved: false,
       comments: 213,
       likes: 26053,
-      posted: 73),
+      posted: 1),
   Feed(
       username: 'travisscott',
       caption: 'sicko mode on',
@@ -114,7 +114,7 @@ List<Feed> posts = [
       isSaved: false,
       comments: 50,
       likes: 500,
-      posted: 110),
+      posted: 23),
   Feed(
       username: 'kyliejenner',
       caption: 'glossy.',
@@ -124,7 +124,7 @@ List<Feed> posts = [
       isSaved: false,
       comments: 200,
       likes: 22234,
-      posted: 49),
+      posted: 140),
   Feed(
       username: 'kyrieirving',
       caption: 'get buckets',
@@ -134,7 +134,7 @@ List<Feed> posts = [
       isSaved: false,
       comments: 213,
       likes: 26000,
-      posted: 73),
+      posted: 5),
 ];
 
 List<Dms> directs = [

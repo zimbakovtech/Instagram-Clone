@@ -187,6 +187,9 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             setState(() {
                               posts[index].isLiked = !posts[index].isLiked;
+                              posts[index].isLiked
+                                  ? posts[index].likes++
+                                  : posts[index].likes--;
                             });
                           },
                         ),
@@ -276,6 +279,20 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 10.0, top: 4.0, bottom: 6.0),
+                      child: Text(
+                        posts[index].posted < 24
+                            ? posts[index].posted < 2
+                                ? '${posts[index].posted} hour ago'
+                                : '${posts[index].posted} hours ago'
+                            : posts[index].posted / 24 < 2
+                                ? '${posts[index].posted ~/ 24} day ago'
+                                : '${posts[index].posted ~/ 24} days ago',
+                        style: TextStyle(color: Colors.grey, fontSize: 12.0),
                       ),
                     ),
                   ],
