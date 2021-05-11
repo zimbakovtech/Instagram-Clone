@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/direct.dart';
+import 'direct/direct.dart';
+import 'direct/search.dart';
 import 'home.dart';
 import 'explore.dart';
 import 'add.dart';
@@ -10,10 +11,12 @@ void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: Colors.grey,
       ),
       home: TabPage(),
       routes: {
         '/direct': (context) => Direct(),
+        '/search': (context) => SearchDirect(),
       },
     ));
 

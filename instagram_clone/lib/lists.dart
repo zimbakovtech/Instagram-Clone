@@ -140,42 +140,104 @@ List<Feed> posts = [
 ];
 
 List<Dms> directs = [
-  Dms(name: 'Zendaya', profile: 'assets/zendaya.jpg', status: 'Sent 1m ago'),
+  Dms(
+      name: 'Zendaya',
+      profile: 'assets/zendaya.jpg',
+      status: 'Sent 1m ago',
+      username: 'zendaya'),
   Dms(
       name: 'Travis Scott',
       profile: 'assets/travis.jpg',
-      status: 'Seen 8m ago'),
-  Dms(name: 'The Rock', profile: 'assets/therock.jpeg', status: 'Sent 20m ago'),
-  Dms(name: 'Kyrie Irving', profile: 'assets/kyrie.jpg', status: 'Sent 1h ago'),
-  Dms(name: 'Kylie Jenner', profile: 'assets/kylie.jpg', status: 'Sent 3h ago'),
-  Dms(name: 'Zendaya', profile: 'assets/zendaya.jpg', status: 'Opened 5h ago'),
+      status: 'Seen 8m ago',
+      username: 'travisscott'),
   Dms(
-      name: 'Travis Scott',
-      profile: 'assets/travis.jpg',
-      status: 'Sent 10h ago'),
-  Dms(name: 'The Rock', profile: 'assets/therock.jpeg', status: 'Seen 19h ago'),
+      name: 'The Rock',
+      profile: 'assets/therock.jpeg',
+      status: 'Sent 20m ago',
+      username: 'therock'),
   Dms(
       name: 'Kyrie Irving',
       profile: 'assets/kyrie.jpg',
-      status: 'Opened 1d ago'),
-  Dms(name: 'Kylie Jenner', profile: 'assets/kylie.jpg', status: 'Sent 3d ago'),
-  Dms(name: 'Zendaya', profile: 'assets/zendaya.jpg', status: 'Sent 1m ago'),
+      status: 'Sent 1h ago',
+      username: 'kyrieirving'),
+  Dms(
+      name: 'Kylie Jenner',
+      profile: 'assets/kylie.jpg',
+      status: 'Sent 3h ago',
+      username: 'kyliejenner'),
+  Dms(
+      name: 'Zendaya',
+      profile: 'assets/zendaya.jpg',
+      status: 'Opened 5h ago',
+      username: 'zendaya'),
   Dms(
       name: 'Travis Scott',
       profile: 'assets/travis.jpg',
-      status: 'Seen 8m ago'),
-  Dms(name: 'The Rock', profile: 'assets/therock.jpeg', status: 'Sent 20m ago'),
-  Dms(name: 'Kyrie Irving', profile: 'assets/kyrie.jpg', status: 'Sent 1h ago'),
-  Dms(name: 'Kylie Jenner', profile: 'assets/kylie.jpg', status: 'Sent 3h ago'),
-  Dms(name: 'Zendaya', profile: 'assets/zendaya.jpg', status: 'Opened 5h ago'),
+      status: 'Sent 10h ago',
+      username: 'travisscott'),
   Dms(
-      name: 'Travis Scott',
-      profile: 'assets/travis.jpg',
-      status: 'Sent 10h ago'),
-  Dms(name: 'The Rock', profile: 'assets/therock.jpeg', status: 'Seen 19h ago'),
+      name: 'The Rock',
+      profile: 'assets/therock.jpeg',
+      status: 'Seen 19h ago',
+      username: 'therock'),
   Dms(
       name: 'Kyrie Irving',
       profile: 'assets/kyrie.jpg',
-      status: 'Opened 1d ago'),
-  Dms(name: 'Kylie Jenner', profile: 'assets/kylie.jpg', status: 'Sent 3d ago'),
+      status: 'Opened 1d ago',
+      username: 'kyrieirving'),
+  Dms(
+      name: 'Kylie Jenner',
+      profile: 'assets/kylie.jpg',
+      status: 'Sent 3d ago',
+      username: 'kyliejenner'),
+  Dms(
+      name: 'Zendaya',
+      profile: 'assets/zendaya.jpg',
+      status: 'Sent 1m ago',
+      username: 'zendaya'),
+  Dms(
+      name: 'Travis Scott',
+      profile: 'assets/travis.jpg',
+      status: 'Seen 8m ago',
+      username: 'travisscott'),
+  Dms(
+      name: 'The Rock',
+      profile: 'assets/therock.jpeg',
+      status: 'Sent 20m ago',
+      username: 'therock'),
+  Dms(
+      name: 'Kyrie Irving',
+      profile: 'assets/kyrie.jpg',
+      status: 'Sent 1h ago',
+      username: 'kyrieirving'),
+  Dms(
+      name: 'Kylie Jenner',
+      profile: 'assets/kylie.jpg',
+      status: 'Sent 3h ago',
+      username: 'kyliejenner'),
+  Dms(
+      name: 'Zendaya',
+      profile: 'assets/zendaya.jpg',
+      status: 'Opened 5h ago',
+      username: 'zendaya'),
+  Dms(
+      name: 'Travis Scott',
+      profile: 'assets/travis.jpg',
+      status: 'Sent 10h ago',
+      username: 'travisscott'),
+  Dms(
+      name: 'The Rock',
+      profile: 'assets/therock.jpeg',
+      status: 'Seen 19h ago',
+      username: 'therock'),
+  Dms(
+      name: 'Kyrie Irving',
+      profile: 'assets/kyrie.jpg',
+      status: 'Opened 1d ago',
+      username: 'kyrieirving'),
+  Dms(
+      name: 'Kylie Jenner',
+      profile: 'assets/kylie.jpg',
+      status: 'Sent 3d ago',
+      username: 'kyliejenner'),
 ];

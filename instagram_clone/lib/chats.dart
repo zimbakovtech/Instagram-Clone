@@ -26,13 +26,13 @@ class _ChatsState extends State<Chats> {
           child: Card(
             color: Colors.grey[300],
             child: ListTile(
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed('/search'),
               leading: IconButton(
                 icon: Icon(
                   Icons.search,
                   color: Colors.grey[500],
                 ),
-                onPressed: () {},
+                onPressed: () => Navigator.of(context).pushNamed('/search'),
               ),
               title: Text(
                 'Search',
@@ -58,7 +58,7 @@ class _ChatsState extends State<Chats> {
             ),
           ),
           Container(
-            height: MediaQuery.of(context).size.height - 203,
+            height: MediaQuery.of(context).size.height - 153,
             child: ListView.builder(
               itemCount: directs.length,
               itemBuilder: (BuildContext context, int index) {
@@ -108,26 +108,6 @@ class _ChatsState extends State<Chats> {
                         ),
                       ],
                     ),
-                    // child: Padding(
-                    //   padding: const EdgeInsets.only(top: 7.0),
-                    //   child: ListTile(
-                    //     leading: CircleAvatar(
-                    //       backgroundImage: AssetImage(directs[index].profile),
-                    //       radius: 55.0,
-                    //     ),
-                    //     title: Text(
-                    //       directs[index].name,
-                    //       style: TextStyle(fontSize: 14.0),
-                    //     ),
-                    //     trailing: IconButton(
-                    //       icon: Icon(
-                    //         Icons.camera_alt_outlined,
-                    //         color: Colors.grey[500],
-                    //       ),
-                    //       onPressed: () {},
-                    //     ),
-                    //   ),
-                    // ),
                   ),
                 );
               },

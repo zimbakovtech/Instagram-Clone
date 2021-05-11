@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'chats.dart';
+import 'package:instagram_clone/chats.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,

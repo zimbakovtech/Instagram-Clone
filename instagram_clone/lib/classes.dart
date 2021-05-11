@@ -40,6 +40,7 @@ class Dms {
   String name;
   String profile;
   String status;
+  String username;
 
-  Dms({this.name, this.profile, this.status});
+  Dms({this.name, this.profile, this.status, this.username});
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'direct.dart';
 import 'lists.dart';
 
 void main() => runApp(MaterialApp(
@@ -9,9 +8,6 @@ void main() => runApp(MaterialApp(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomePage(),
-      routes: {
-        '/direct': (context) => Direct(),
-      },
     ));
 
 class HomePage extends StatefulWidget {
@@ -147,13 +143,6 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontSize: 12.0, color: Colors.black),
         ),
       ],
-    );
-  }
-
-  Widget getDivider() {
-    return Divider(
-      height: 1.0,
-      color: Colors.grey[350],
     );
   }
 
