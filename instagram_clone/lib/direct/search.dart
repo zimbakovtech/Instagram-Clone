@@ -28,7 +28,10 @@ class _SearchDirectState extends State<SearchDirect> {
               autofocus: true,
               decoration: InputDecoration(
                 hintText: 'Search',
-                prefixIcon: Icon(Icons.arrow_back, color: Colors.black),
+                prefixIcon: IconButton(
+                  icon: Icon(Icons.arrow_back, color: Colors.black),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
               ),
             ),
           ),

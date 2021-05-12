@@ -41,6 +41,7 @@ class Dms {
   String profile;
   String status;
   String username;
+  bool following;
 
-  Dms({this.name, this.profile, this.status, this.username});
+  Dms({this.name, this.profile, this.status, this.username, this.following});
 }

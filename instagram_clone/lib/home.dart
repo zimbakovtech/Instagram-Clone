@@ -234,16 +234,19 @@ class _HomePageState extends State<HomePage> {
         ),
         Padding(
           padding: const EdgeInsets.only(left: 10.0),
-          child: Text(
-            (posts[index].likes < 10000)
-                ? '${posts[index].likes} likes'
-                : (posts[index].likes < 100000)
-                    ? '${posts[index].likes ~/ 1000},${(posts[index].likes / 100 % 10).toInt()}${(posts[index].likes / 10 % 10).toInt()}${(posts[index].likes % 10).toInt()} likes'
-                    : '${posts[index].likes} likes',
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 13.0,
+          child: TextButton(
+            onPressed: () => Navigator.of(context).pushNamed('/likes'),
+            child: Text(
+              (posts[index].likes < 10000)
+                  ? '${posts[index].likes} likes'
+                  : (posts[index].likes < 100000)
+                      ? '${posts[index].likes ~/ 1000},${(posts[index].likes / 100 % 10).toInt()}${(posts[index].likes / 10 % 10).toInt()}${(posts[index].likes % 10).toInt()} likes'
+                      : '${posts[index].likes} likes',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 13.0,
+              ),
             ),
           ),
         ),

@@ -6,6 +6,7 @@ import 'explore.dart';
 import 'add.dart';
 import 'activity.dart';
 import 'profile.dart';
+import 'likes.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -17,6 +18,7 @@ void main() => runApp(MaterialApp(
       routes: {
         '/direct': (context) => Direct(),
         '/search': (context) => SearchDirect(),
+        '/likes': (context) => Likes(),
       },
     ));
 
