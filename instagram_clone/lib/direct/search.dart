@@ -18,43 +18,46 @@ class _SearchDirectState extends State<SearchDirect> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: TextField(
-              cursorColor: Colors.black,
-              autofocus: true,
-              decoration: InputDecoration(
-                hintText: 'Search',
-                prefixIcon: IconButton(
-                  icon: Icon(Icons.arrow_back, color: Colors.black),
-                  onPressed: () => Navigator.of(context).pop(),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: TextField(
+                cursorColor: Colors.black,
+                autofocus: true,
+                decoration: InputDecoration(
+                  hintText: 'Search',
+                  prefixIcon: IconButton(
+                    icon: Icon(Icons.arrow_back, color: Colors.black),
+                    onPressed: () => Navigator.of(context).pop(),
+                  ),
                 ),
               ),
             ),
-          ),
-          Divider(height: 1.0),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-            child: Text(
-              'Suggested',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 14.0,
-                fontWeight: FontWeight.bold,
+            Divider(height: 1.0),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+              child: Text(
+                'Suggested',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height - 85,
-            child: ListView(
-              children: accounts(),
+            Container(
+              height: MediaQuery.of(context).size.height - 85,
+              child: ListView(
+                children: accounts(),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

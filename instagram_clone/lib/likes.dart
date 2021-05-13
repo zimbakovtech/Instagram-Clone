@@ -18,6 +18,7 @@ class _LikesState extends State<Likes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
@@ -35,7 +36,6 @@ class _LikesState extends State<Likes> {
             child: Card(
               color: Colors.grey[300],
               child: ListTile(
-                onTap: () => Navigator.of(context).pushNamed('/search'),
                 leading: IconButton(
                   icon: Icon(
                     Icons.search,
@@ -107,21 +107,6 @@ class _LikesState extends State<Likes> {
             Spacer(),
             Padding(
               padding: const EdgeInsets.only(right: 10.0),
-              // child: FlatButton(
-              //   color: directs[index].following ? Colors.white : Colors.blue,
-              //   child: Text(
-              //     directs[index].following ? 'Following' : 'Follow',
-              //     style: TextStyle(
-              //       color:
-              //           directs[index].following ? Colors.black : Colors.white,
-              //     ),
-              //   ),
-              //   onPressed: () {
-              //     setState(() {
-              //       directs[index].following = !directs[index].following;
-              //     });
-              //   },
-              // ),
               child: TextButton(
                 child: Container(
                   height: 30.0,
