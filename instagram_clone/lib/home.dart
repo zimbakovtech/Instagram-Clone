@@ -147,199 +147,202 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget getPost(int index) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 30.0,
-                width: 30.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(posts[index].profile),
-                      fit: BoxFit.fill),
-                  shape: BoxShape.circle,
+    return Container(
+      width: 500.0,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 30.0,
+                  width: 30.0,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(posts[index].profile),
+                        fit: BoxFit.fill),
+                    shape: BoxShape.circle,
+                  ),
                 ),
               ),
-            ),
-            Text(
-              posts[index].username,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 12.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Spacer(),
-            IconButton(
-              icon: Icon(Icons.more_vert),
-              color: Colors.black,
-              onPressed: () {},
-            ),
-          ],
-        ),
-        Container(
-          child: GestureDetector(onDoubleTap: () {
-            setState(() {
-              posts[index].isLiked = !posts[index].isLiked;
-            });
-          }),
-          height: 500.0,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(posts[index].post),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-        Row(
-          children: [
-            IconButton(
-              icon: posts[index].isLiked
-                  ? Icon(Icons.favorite)
-                  : Icon(Icons.favorite_outline),
-              color: posts[index].isLiked ? Colors.red : null,
-              onPressed: () {
-                setState(() {
-                  posts[index].isLiked = !posts[index].isLiked;
-                  posts[index].isLiked
-                      ? posts[index].likes++
-                      : posts[index].likes--;
-                });
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.message_outlined),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(Icons.near_me_outlined),
-              onPressed: () {},
-            ),
-            Spacer(),
-            IconButton(
-              icon: posts[index].isSaved
-                  ? Icon(Icons.bookmark)
-                  : Icon(Icons.bookmark_outline),
-              onPressed: () {
-                setState(() {
-                  posts[index].isSaved = !posts[index].isSaved;
-                });
-              },
-            ),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 10.0),
-          child: TextButton(
-            onPressed: () => Navigator.of(context).pushNamed('/likes'),
-            child: Text(
-              (posts[index].likes < 10000)
-                  ? '${posts[index].likes} likes'
-                  : (posts[index].likes < 100000)
-                      ? '${posts[index].likes ~/ 1000},${(posts[index].likes / 100 % 10).toInt()}${(posts[index].likes / 10 % 10).toInt()}${(posts[index].likes % 10).toInt()} likes'
-                      : '${posts[index].likes} likes',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 13.0,
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 10.0, top: 5.0),
-          child: Row(
-            children: [
               Text(
-                '${posts[index].username} ',
+                posts[index].username,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Spacer(),
+              IconButton(
+                icon: Icon(Icons.more_vert),
+                color: Colors.black,
+                onPressed: () {},
+              ),
+            ],
+          ),
+          Container(
+            child: GestureDetector(onDoubleTap: () {
+              setState(() {
+                posts[index].isLiked = !posts[index].isLiked;
+              });
+            }),
+            height: 500.0,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(posts[index].post),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Row(
+            children: [
+              IconButton(
+                icon: posts[index].isLiked
+                    ? Icon(Icons.favorite)
+                    : Icon(Icons.favorite_outline),
+                color: posts[index].isLiked ? Colors.red : null,
+                onPressed: () {
+                  setState(() {
+                    posts[index].isLiked = !posts[index].isLiked;
+                    posts[index].isLiked
+                        ? posts[index].likes++
+                        : posts[index].likes--;
+                  });
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.message_outlined),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.near_me_outlined),
+                onPressed: () {},
+              ),
+              Spacer(),
+              IconButton(
+                icon: posts[index].isSaved
+                    ? Icon(Icons.bookmark)
+                    : Icon(Icons.bookmark_outline),
+                onPressed: () {
+                  setState(() {
+                    posts[index].isSaved = !posts[index].isSaved;
+                  });
+                },
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: TextButton(
+              onPressed: () => Navigator.of(context).pushNamed('/likes'),
+              child: Text(
+                (posts[index].likes < 10000)
+                    ? '${posts[index].likes} likes'
+                    : (posts[index].likes < 100000)
+                        ? '${posts[index].likes ~/ 1000},${(posts[index].likes / 100 % 10).toInt()}${(posts[index].likes / 10 % 10).toInt()}${(posts[index].likes % 10).toInt()} likes'
+                        : '${posts[index].likes} likes',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 13.0,
                 ),
               ),
-              Text(
-                '${posts[index].caption}',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 13.0,
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 10.0, top: 5.0),
-          child: Row(
-            children: [
-              Container(
-                height: 25.0,
-                width: 25.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/dm.jpg'), fit: BoxFit.fill),
-                  shape: BoxShape.circle,
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0, top: 5.0),
+            child: Row(
+              children: [
+                Text(
+                  '${posts[index].username} ',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13.0,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0),
-                child: TextButton(
-                  child: Text(
-                    'Add a comment...',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 13.0,
+                Text(
+                  '${posts[index].caption}',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13.0,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0, top: 5.0),
+            child: Row(
+              children: [
+                Container(
+                  height: 25.0,
+                  width: 25.0,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/dm.jpg'), fit: BoxFit.fill),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: TextButton(
+                    child: Text(
+                      'Add a comment...',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 13.0,
+                      ),
                     ),
+                    onPressed: () {},
+                  ),
+                ),
+                Spacer(),
+                IconButton(
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.red[800],
+                    size: 15.0,
                   ),
                   onPressed: () {},
                 ),
-              ),
-              Spacer(),
-              IconButton(
-                icon: Icon(
-                  Icons.favorite,
-                  color: Colors.red[800],
-                  size: 15.0,
+                IconButton(
+                  icon: Icon(
+                    Icons.emoji_emotions,
+                    color: Colors.yellow[700],
+                    size: 15.0,
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.emoji_emotions,
-                  color: Colors.yellow[700],
-                  size: 15.0,
+                IconButton(
+                  icon: Icon(
+                    Icons.add_circle_outline,
+                    color: Colors.grey,
+                    size: 15.0,
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.add_circle_outline,
-                  color: Colors.grey,
-                  size: 15.0,
-                ),
-                onPressed: () {},
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 10.0, top: 4.0, bottom: 6.0),
-          child: Text(
-            posts[index].posted < 24
-                ? posts[index].posted < 2
-                    ? '${posts[index].posted} hour ago'
-                    : '${posts[index].posted} hours ago'
-                : posts[index].posted / 24 < 2
-                    ? '${posts[index].posted ~/ 24} day ago'
-                    : '${posts[index].posted ~/ 24} days ago',
-            style: TextStyle(color: Colors.grey, fontSize: 12.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0, top: 4.0, bottom: 6.0),
+            child: Text(
+              posts[index].posted < 24
+                  ? posts[index].posted < 2
+                      ? '${posts[index].posted} hour ago'
+                      : '${posts[index].posted} hours ago'
+                  : posts[index].posted / 24 < 2
+                      ? '${posts[index].posted ~/ 24} day ago'
+                      : '${posts[index].posted ~/ 24} days ago',
+              style: TextStyle(color: Colors.grey, fontSize: 12.0),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
