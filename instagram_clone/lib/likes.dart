@@ -52,10 +52,11 @@ class _LikesState extends State<Likes> {
                   borderRadius: BorderRadius.circular(10.0)),
             ),
           ),
-          Container(
-            height: MediaQuery.of(context).size.height - 122,
-            child: ListView(
-              children: accounts(),
+          Expanded(
+            child: Container(
+              child: ListView(
+                children: accounts(),
+              ),
             ),
           ),
         ],

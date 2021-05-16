@@ -57,60 +57,61 @@ class _ChatsState extends State<Chats> {
               ),
             ),
           ),
-          Container(
-            height: MediaQuery.of(context).size.height - 153,
-            child: ListView.builder(
-              itemCount: directs.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  height: 70.0,
-                  width: 100.0,
-                  child: Card(
-                    color: Colors.white,
-                    elevation: 0.0,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding:
-                              const EdgeInsets.only(left: 8.0, right: 10.0),
-                          child: CircleAvatar(
-                            backgroundImage: AssetImage(directs[index].profile),
-                            radius: 28.0,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 15.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                directs[index].name,
-                                style: TextStyle(fontSize: 14.0),
-                              ),
-                              Text(
-                                directs[index].status,
-                                style: TextStyle(
-                                    fontSize: 13.0, color: Colors.grey[500]),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8.0),
-                          child: IconButton(
-                            icon: Icon(
-                              Icons.camera_alt_outlined,
-                              color: Colors.grey[500],
+          Expanded(
+            child: Container(
+              child: ListView.builder(
+                itemCount: directs.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    height: 70.0,
+                    width: 100.0,
+                    child: Card(
+                      color: Colors.white,
+                      elevation: 0.0,
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 8.0, right: 10.0),
+                            child: CircleAvatar(
+                              backgroundImage: AssetImage(directs[index].profile),
+                              radius: 28.0,
                             ),
-                            onPressed: () {},
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.only(top: 15.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  directs[index].name,
+                                  style: TextStyle(fontSize: 14.0),
+                                ),
+                                Text(
+                                  directs[index].status,
+                                  style: TextStyle(
+                                      fontSize: 13.0, color: Colors.grey[500]),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Spacer(),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.camera_alt_outlined,
+                                color: Colors.grey[500],
+                              ),
+                              onPressed: () {},
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           ),
         ],

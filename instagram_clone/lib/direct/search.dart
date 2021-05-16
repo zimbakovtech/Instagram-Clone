@@ -50,10 +50,11 @@ class _SearchDirectState extends State<SearchDirect> {
                 ),
               ),
             ),
-            Container(
-              height: MediaQuery.of(context).size.height - 85,
-              child: ListView(
-                children: accounts(),
+            Expanded(
+              child: Container(
+                child: ListView(
+                  children: accounts(),
+                ),
               ),
             ),
           ],
